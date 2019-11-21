@@ -51,13 +51,14 @@ function renderFootnotes(text) {
 
     // render (HTML) footnotes reference
     text = text.replace(reFootnoteIndex,
-        function(match, index){
+        function (match, index) {
             var tooltip = indexMap[index].content;
-            return '<sup id="fnref:' + index + '">' +
-                '<a href="#fn:'+ index +'" rel="footnote">' +
-                '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="'
-                + tooltip.replace('"', '\\"') +
-                '">[' + index +']</span></a></sup>';
+            return util.htmlTag('sup', {id: "fnref:" + index},
+                util.htmlTag('a', {href: "#fn:" + index, rel: "footnote"},
+                    util.htmlTag("span", {
+                        class: "hint--top hint--error hint--medium hint--rounded hint--bounce",
+                        "aria-label": tooltip
+                    }, "[" + index + "]", false), false), false)
         });
 
     // sort footnotes by their index
