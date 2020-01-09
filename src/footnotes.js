@@ -5,6 +5,8 @@ var md = require('markdown-it')({
     html: true
 });
 
+const util = require('hexo-util')
+
 /**
  * Render markdown footnotes
  * @param {String} text
