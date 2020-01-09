@@ -1,6 +1,6 @@
 {
   "name": "hexo-reference-updated",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A plugin to support markdown footnotes and Wiki-Style tooltip reference in your Hexo blog posts.",
   "main": "index.js",
   "scripts": {

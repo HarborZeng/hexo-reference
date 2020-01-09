@@ -59,7 +59,7 @@ function renderFootnotes(text) {
                 util.htmlTag('a', {href: "#fn:" + index, rel: "footnote"},
                     util.htmlTag("span", {
                         class: "hint--top hint--error hint--medium hint--rounded hint--bounce",
-                        "aria-label": tooltip
+                        "aria-label": tooltip.replace(/(\r\n|\n|\r)/gm, "")
                     }, "[" + index + "]", false), false), false)
         });
 
